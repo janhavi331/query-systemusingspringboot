@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dr. Renuka Rajendra Kajale | Assistant Professor</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<style>
+  :root{--navy:#1a2e5a;--blue:#2c4fa3;--mid-blue:#3a6bc4;--light-blue:#e8eef8;--gold:#d4a017;--white:#ffffff;--off-white:#f5f7fb;--text:#222831;--text-muted:#5a6580;--border:#dce3ef;--shadow:0 2px 12px rgba(26,46,90,0.10);--radius:6px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Source Sans 3',sans-serif;color:var(--text);background:var(--off-white);font-size:16px;line-height:1.65}
+  .top-bar{background:var(--navy);color:rgba(255,255,255,0.75);font-size:12.5px;padding:6px 0}
+  .top-bar .wrap{display:flex;justify-content:space-between;align-items:center;max-width:1140px;margin:0 auto;padding:0 24px}
+  .top-bar a{color:rgba(255,255,255,0.75);text-decoration:none;margin-left:16px}
+  .top-bar a:hover{color:#fff}
+  .site-header{background:var(--blue);padding:18px 0 16px;border-bottom:4px solid var(--gold)}
+  .site-header .wrap{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px}
+  .logo-icon{width:54px;height:54px;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;flex-shrink:0}
+  .site-title{color:#fff}
+  .site-title h1{font-family:'Merriweather',serif;font-size:22px;font-weight:700;letter-spacing:.3px}
+  .site-title p{font-size:13px;color:rgba(255,255,255,0.85);margin-top:2px}
+  .dept-tag{margin-left:auto;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.3);color:#fff;font-size:12px;padding:5px 14px;border-radius:3px;text-align:center}
+  nav.main-nav{background:var(--navy);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.3)}
+  nav.main-nav ul{list-style:none;display:flex;flex-wrap:wrap;max-width:1140px;margin:0 auto;padding:0 24px}
+  nav.main-nav ul li a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;padding:13px 13px;font-size:12px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;transition:all .2s;border-bottom:3px solid transparent}
+  nav.main-nav ul li a:hover,nav.main-nav ul li a.active{color:#fff;background:rgba(255,255,255,0.06);border-bottom-color:var(--gold)}
+  .page-wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  .content-grid{display:grid;grid-template-columns:265px 1fr;gap:28px;margin:32px 0}
+  .sidebar{display:flex;flex-direction:column;gap:20px}
+  .profile-card{background:var(--white);border:1px solid var(--border);border-top:4px solid var(--blue);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;text-align:center;padding-bottom:16px}
+  .profile-photo-box{background:linear-gradient(135deg,var(--blue) 0%,var(--navy) 100%);padding:28px 20px 20px}
+  .profile-photo{width:120px;height:120px;border-radius:50%;border:4px solid rgba(255,255,255,0.9);background:#c5d4ee;display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:48px;color:var(--blue)}
+  .profile-card h2{font-family:'Merriweather',serif;font-size:14.5px;color:var(--navy);margin:14px 10px 4px;line-height:1.4}
+  .profile-card .designation{font-size:13px;color:var(--blue);font-weight:600;margin:0 10px 10px}
+  .profile-card .dept-info{font-size:12px;color:var(--text-muted);margin:0 10px;padding-top:10px;border-top:1px solid var(--border);line-height:1.6}
+  .contact-chips{padding:10px 12px 0;display:flex;flex-direction:column;gap:5px}
+  .contact-chip{font-size:11px;color:var(--text-muted);display:flex;align-items:flex-start;gap:6px;text-align:left}
+  .contact-chip a{color:var(--blue);text-decoration:none;word-break:break-all}
+  .sidebar-widget{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+  .widget-head{background:var(--navy);color:#fff;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;padding:10px 16px}
+  .widget-body{padding:14px 16px}
+  .quick-link{display:flex;align-items:center;gap:10px;color:var(--blue);font-size:13px;text-decoration:none;padding:7px 0;border-bottom:1px solid #eef0f5;transition:color .2s}
+  .quick-link:last-child{border-bottom:none}
+  .quick-link:hover{color:#c8392b}
+  .quick-link i{width:16px;font-size:12px;color:var(--text-muted)}
+  .expertise-tag{display:inline-block;background:var(--light-blue);color:var(--blue);font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:3px;margin:2px 2px}
+  .main-content{display:flex;flex-direction:column;gap:28px}
+  section.panel{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+  .panel-head{background:var(--blue);color:#fff;padding:12px 22px;font-family:'Merriweather',serif;font-size:16px;font-weight:700;display:flex;align-items:center;gap:10px}
+  .panel-head i{font-size:14px;opacity:.85}
+  .panel-body{padding:22px 24px}
+  .section-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:4px;font-weight:700}
+  .divider{border:none;border-top:1px solid var(--border);margin:18px 0}
+  .intro-banner{display:flex;gap:22px;align-items:flex-start}
+  .avatar-lg{width:88px;height:88px;border-radius:50%;background:var(--light-blue);display:flex;align-items:center;justify-content:center;font-size:36px;color:var(--blue);flex-shrink:0;border:3px solid var(--border)}
+  .badge{display:inline-block;font-size:12px;font-weight:600;padding:3px 10px;border-radius:3px;margin-right:5px;margin-top:4px}
+  .badge-blue{background:var(--light-blue);color:var(--blue)}
+  .badge-gold{background:#fdf3e3;color:#9a6c00}
+  .badge-green{background:#e8f5e9;color:#2e7d32}
+  .qual-list{list-style:none}
+  .qual-list li{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);font-size:14.5px}
+  .qual-list li:last-child{border-bottom:none}
+  .ql-icon{width:32px;height:32px;background:var(--light-blue);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--blue);font-size:13px}
+  .qual-list li strong{display:block;color:var(--navy)}
+  .qual-list li span{font-size:13px;color:var(--text-muted)}
+  .exp-box{display:flex;align-items:center;gap:16px;background:var(--light-blue);border-radius:var(--radius);padding:16px 20px;margin-top:16px}
+  .exp-num{font-family:'Merriweather',serif;font-size:36px;font-weight:700;color:var(--blue);line-height:1}
+  .exp-label{font-size:14px;color:var(--text-muted)}
+  .exp-label strong{display:block;font-size:16px;color:var(--navy)}
+  .subject-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .subject-chip{background:var(--light-blue);color:var(--blue);font-size:12.5px;font-weight:600;padding:5px 11px;border-radius:4px;border:1px solid #c5d4f0}
+  .research-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .r-card{border:1px solid var(--border);border-radius:var(--radius);padding:16px;background:var(--off-white)}
+  .r-card h4{color:var(--navy);font-size:14px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+  .r-card h4 i{color:var(--blue)}
+  .r-card p,.r-card ul{font-size:13.5px;color:var(--text-muted)}
+  .r-card ul{padding-left:16px}
+  .r-card ul li{margin-bottom:4px}
+  .role-list{list-style:none}
+  .role-list li{display:flex;align-items:flex-start;gap:12px;padding:9px 0;border-bottom:1px dashed var(--border);font-size:14px}
+  .role-list li:last-child{border-bottom:none}
+  .role-list li i{color:var(--blue);margin-top:3px;flex-shrink:0;width:16px}
+  .student-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .s-card{border:1px solid var(--border);border-radius:var(--radius);padding:18px 16px;background:var(--off-white);text-align:center;cursor:pointer;transition:all .2s;text-decoration:none;color:inherit;display:block}
+  .s-card:hover{border-color:var(--blue);background:var(--light-blue);transform:translateY(-2px);box-shadow:0 4px 16px rgba(44,79,163,0.12)}
+  .s-card .icon-wrap{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:20px}
+  .s-card h4{font-size:14px;color:var(--navy);margin-bottom:4px;font-weight:700}
+  .s-card p{font-size:12.5px;color:var(--text-muted)}
+  .s1 .icon-wrap{background:#e8f4fd;color:#1a78c2}
+  .s2 .icon-wrap{background:#fdecea;color:#c8392b}
+  .s3 .icon-wrap{background:#e8f5e9;color:#2e7d32}
+  .s4 .icon-wrap{background:#fff8e1;color:#f57f17}
+  .s5 .icon-wrap{background:#f3e5f5;color:#7b1fa2}
+  .announce-box{background:#fffbf0;border:1px solid #f0d980;border-left:4px solid var(--gold);border-radius:var(--radius);padding:14px 18px;margin-top:18px}
+  .announce-box h4{font-size:13px;color:#7a5a00;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+  .announce-item{display:flex;align-items:flex-start;gap:10px;padding:6px 0;border-bottom:1px dashed #f0d980;font-size:13.5px}
+  .announce-item:last-child{border-bottom:none}
+  .announce-item i{color:var(--gold);margin-top:3px;flex-shrink:0}
+  .pub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .pub-card{border:1px solid var(--border);border-radius:var(--radius);padding:18px 14px;text-align:center;background:var(--off-white);transition:all .2s}
+  .pub-card:hover{border-color:var(--blue);background:var(--light-blue)}
+  .pub-num{font-family:'Merriweather',serif;font-size:36px;font-weight:700;color:var(--blue);line-height:1.1}
+  .pub-label{font-size:13px;color:var(--text-muted);margin-top:6px;font-weight:600}
+  .pub-icon{font-size:20px;color:var(--mid-blue);margin-bottom:10px}
+  .data-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}
+  .data-table th{background:var(--navy);color:#fff;padding:9px 12px;text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.4px}
+  .data-table td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5}
+  .data-table tr:last-child td{border-bottom:none}
+  .data-table tr:nth-child(even) td{background:var(--off-white)}
+  .data-table td:first-child{color:var(--text-muted);font-weight:700;text-align:center;width:32px}
+  .pub-tag{display:inline-block;font-size:11px;padding:2px 7px;border-radius:3px;font-weight:600;white-space:nowrap}
+  .tag-scopus{background:#e3f2fd;color:#1565c0}
+  .tag-ugc{background:#e8f5e9;color:#2e7d32}
+  .tag-ieee{background:#fff3e0;color:#e65100}
+  .achieve-list{list-style:none;margin-top:10px}
+  .achieve-list li{display:flex;align-items:flex-start;gap:12px;padding:9px 0;border-bottom:1px dashed var(--border);font-size:14px}
+  .achieve-list li:last-child{border-bottom:none}
+  .achieve-list li i{margin-top:3px;flex-shrink:0}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .contact-info-list{list-style:none}
+  .contact-info-list li{display:flex;align-items:flex-start;gap:14px;padding:12px 0;border-bottom:1px solid var(--border);font-size:14px}
+  .contact-info-list li:last-child{border-bottom:none}
+  .ci-icon{width:36px;height:36px;background:var(--light-blue);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--blue);flex-shrink:0;font-size:14px}
+  .ci-label{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);font-weight:600}
+  .ci-val{font-size:14px;color:var(--navy);margin-top:2px}
+  .oh-box{background:var(--off-white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+  .oh-head{background:var(--navy);color:#fff;padding:10px 16px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+  .oh-table{width:100%;border-collapse:collapse}
+  .oh-table td{padding:10px 16px;font-size:14px;border-bottom:1px solid var(--border)}
+  .oh-table td:first-child{color:var(--text-muted);font-weight:600;width:45%}
+  .oh-table tr:last-child td{border-bottom:none}
+  .pct-bar{height:5px;background:var(--border);border-radius:3px;margin-top:4px;overflow:hidden}
+  .pct-fill{height:100%;background:var(--blue);border-radius:3px}
+  footer{background:var(--navy);color:rgba(255,255,255,0.7);text-align:center;padding:22px 24px;font-size:13px;margin-top:40px}
+  footer strong{color:#fff}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+  .panel{animation:fadeUp .4s ease both}
+  .panel:nth-child(1){animation-delay:.05s}.panel:nth-child(2){animation-delay:.1s}.panel:nth-child(3){animation-delay:.15s}.panel:nth-child(4){animation-delay:.2s}.panel:nth-child(5){animation-delay:.25s}.panel:nth-child(6){animation-delay:.3s}.panel:nth-child(7){animation-delay:.35s}.panel:nth-child(8){animation-delay:.4s}
+  @media(max-width:900px){.content-grid{grid-template-columns:1fr}.research-grid,.pub-grid,.student-grid,.contact-grid{grid-template-columns:1fr 1fr}.sidebar{flex-direction:row;flex-wrap:wrap}.sidebar>*{flex:1 1 220px}}
+  @media(max-width:600px){.research-grid,.pub-grid,.student-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}nav.main-nav ul li a{padding:10px 8px;font-size:10.5px}.dept-tag{display:none}.intro-banner{flex-direction:column}}
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="wrap">
+    <span><i class="fas fa-university"></i>&nbsp; Nutan Maharashtra Institute of Engineering &amp; Technology (NMIET), Pune</span>
+    <div>
+      <a href="mailto:renukajale@gmail.com"><i class="fas fa-envelope"></i> renukajale341@gmail.com</a>
+      <a href="tel:8669704710"><i class="fas fa-phone"></i> 8669704710</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+    <div class="site-title">
+      <h1>Dr. Renuka Rajendra Kajale</h1>
+      <p>Assistant Professor &nbsp;|&nbsp; Department of Computer Engineering &nbsp;|&nbsp; NMIET, Pune</p>
+    </div>
+    <div class="dept-tag">
+      <div style="font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.5px;">NMIET</div>
+      <div style="font-size:11px;margin-top:2px;opacity:.8;">Pune, Maharashtra</div>
+    </div>
+  </div>
+</header>
+
+<nav class="main-nav">
+  <ul>
+    <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+    <li><a href="#research"><i class="fas fa-flask"></i> Research</a></li>
+    <li><a href="#roles"><i class="fas fa-tasks"></i> Roles</a></li>
+    <li><a href="#students"><i class="fas fa-book-open"></i> Student Corner</a></li>
+    <li><a href="#publications"><i class="fas fa-file-alt"></i> Publications</a></li>
+    <li><a href="#achievements"><i class="fas fa-trophy"></i> Achievements</a></li>
+    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap">
+  <div class="content-grid">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="profile-card">
+        <div class="profile-photo-box">
+          <div class="profile-photo"><img src="abc.png" alt="Dr. Renuka Kajale"></div>
+        </div>
+        <h2>Dr. Renuka Rajendra Kajale</h2>
+        <div class="designation">Assistant Professor</div>
+        <div class="dept-info">
+          <p>Dept. of Computer Engineering</p>
+          <p style="margin-top:4px;">NMIET, Pune</p>
+          <p style="margin-top:8px;color:var(--blue);font-weight:600;"><i class="fas fa-clock"></i>&nbsp; 13 Years Teaching Experience</p>
+        </div>
+        <div class="contact-chips">
+          <div class="contact-chip"><i class="fas fa-envelope" style="color:var(--blue);margin-top:2px;"></i><a href="mailto:renukajale341@gmail.com">renukajale341@gmail.com</a></div>
+          <div class="contact-chip"><i class="fas fa-envelope" style="color:var(--blue);margin-top:2px;"></i><a href="mailto:renuka.kajale@nmiet.edu.in">renuka.kajale@nmiet.edu.in</a></div>
+          <div class="contact-chip"><i class="fas fa-phone" style="color:var(--blue);margin-top:2px;"></i><span>8669704710 / 7745073990</span></div>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="widget-head"><i class="fas fa-star"></i>&nbsp; Expertise Areas</div>
+        <div class="widget-body">
+          <span class="expertise-tag">Python &amp; Data Science</span>
+          <span class="expertise-tag">Artificial Intelligence</span>
+          <span class="expertise-tag">Theory of Computation</span>
+          <span class="expertise-tag">Assembly Language</span>
+          <span class="expertise-tag">JFLAP</span>
+          <span class="expertise-tag">Mentimeter / Kahoot</span>
+          <span class="expertise-tag">Google Classroom</span>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="widget-head"><i class="fas fa-link"></i>&nbsp; Quick Links</div>
+        <div class="widget-body">
+          <a class="quick-link" href="#students"><i class="fas fa-file-powerpoint"></i> Lecture Notes</a>
+          <a class="quick-link" href="#students"><i class="fas fa-pencil-alt"></i> Assignments</a>
+          <a class="quick-link" href="#students"><i class="fas fa-book"></i> Study Materials</a>
+          <a class="quick-link" href="#publications"><i class="fas fa-journal-whills"></i> Publications</a>
+          <a class="quick-link" href="#achievements"><i class="fas fa-trophy"></i> Achievements</a>
+          <a class="quick-link" href="#contact"><i class="fas fa-calendar-alt"></i> Office Hours</a>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="widget-head"><i class="fas fa-chart-bar"></i>&nbsp; At a Glance</div>
+        <div class="widget-body" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:center;padding:12px;">
+          <div style="background:var(--light-blue);border-radius:5px;padding:10px 6px;">
+            <div style="font-size:20px;font-weight:800;color:var(--blue);font-family:'Merriweather',serif;">21</div>
+            <div style="font-size:11px;color:var(--text-muted);">Papers</div>
+          </div>
+          <div style="background:var(--light-blue);border-radius:5px;padding:10px 6px;">
+            <div style="font-size:20px;font-weight:800;color:var(--blue);font-family:'Merriweather',serif;">14</div>
+            <div style="font-size:11px;color:var(--text-muted);">Copyrights</div>
+          </div>
+          <div style="background:var(--light-blue);border-radius:5px;padding:10px 6px;">
+            <div style="font-size:20px;font-weight:800;color:var(--blue);font-family:'Merriweather',serif;">04</div>
+            <div style="font-size:11px;color:var(--text-muted);">Books</div>
+          </div>
+          <div style="background:var(--light-blue);border-radius:5px;padding:10px 6px;">
+            <div style="font-size:20px;font-weight:800;color:var(--blue);font-family:'Merriweather',serif;">21</div>
+            <div style="font-size:11px;color:var(--text-muted);">FDPs</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="widget-head"><i class="fas fa-id-card"></i>&nbsp; Memberships</div>
+        <div class="widget-body" style="padding:12px 14px;">
+          <div style="background:var(--light-blue);border-radius:4px;padding:9px 12px;margin-bottom:8px;">
+            <div style="font-size:12px;font-weight:700;color:var(--navy);">ISTE Life Member</div>
+            <div style="font-size:12px;color:var(--text-muted);">LM118379</div>
+          </div>
+          <div style="background:var(--light-blue);border-radius:4px;padding:9px 12px;">
+            <div style="font-size:12px;font-weight:700;color:var(--navy);">INENG Life Member</div>
+            <div style="font-size:12px;color:var(--text-muted);">371218</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- HOME -->
+      <section class="panel" id="home">
+        <div class="panel-head"><i class="fas fa-home"></i> Home / Profile</div>
+        <div class="panel-body">
+          <div class="intro-banner">
+            <div class="avatar-lg"><i class="fas fa-user-tie"></i></div>
+            <div>
+              <p class="section-label">Welcome to My Academic Page</p>
+              <h3 style="font-family:'Merriweather',serif;font-size:20px;color:var(--navy);margin-bottom:6px;">Dr. Renuka Rajendra Kajale</h3>
+              <div>
+                <span class="badge badge-blue"><i class="fas fa-chalkboard-teacher"></i>&nbsp; Associate Dean</span>
+                <span class="badge badge-blue"><i class="fas fa-chalkboard-teacher"></i>&nbsp; Assistant Professor</span>
+                <span class="badge badge-gold"><i class="fas fa-clock"></i>&nbsp; 13 Years Teaching</span>
+                <span class="badge badge-green"><i class="fas fa-graduation-cap"></i>&nbsp; Ph.D – Computer Engineering (2025)</span>
+              </div>
+              <p style="color:var(--text-muted);font-size:14.5px;margin-top:10px;">
+                Welcome! I am an Assistant Professor in the Department of Computer Science &amp; Engineering at NMIET, Pune, with over 13 years of dedicated teaching experience. My career objective is to contribute to organisational success through knowledge and experience, while continuously adding value to my professional and personal skills. I am passionate about <strong>Artificial Intelligence</strong>, <strong>Python with Data Science</strong>, and <strong>Theory of Computation</strong>.
+              </p>
+            </div>
+          </div>
+          <hr class="divider"/>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;text-align:center;">
+            <div style="background:var(--off-white);border:1px solid var(--border);border-radius:var(--radius);padding:16px 10px;">
+              <i class="fas fa-book" style="font-size:22px;color:var(--blue);margin-bottom:8px;display:block;"></i>
+              <strong style="color:var(--navy);font-size:13.5px;">Python &amp; Data Science</strong>
+              <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">Core teaching &amp; research area</p>
+            </div>
+            <div style="background:var(--off-white);border:1px solid var(--border);border-radius:var(--radius);padding:16px 10px;">
+              <i class="fas fa-brain" style="font-size:22px;color:var(--blue);margin-bottom:8px;display:block;"></i>
+              <strong style="color:var(--navy);font-size:13.5px;">Artificial Intelligence</strong>
+              <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">Research &amp; innovation focus</p>
+            </div>
+            <div style="background:var(--off-white);border:1px solid var(--border);border-radius:var(--radius);padding:16px 10px;">
+              <i class="fas fa-cogs" style="font-size:22px;color:var(--blue);margin-bottom:8px;display:block;"></i>
+              <strong style="color:var(--navy);font-size:13.5px;">Theory of Computation</strong>
+              <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">Theoretical CS foundations</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="panel" id="about">
+        <div class="panel-head"><i class="fas fa-user"></i> About</div>
+        <div class="panel-body">
+
+          <p class="section-label">Qualification Details</p>
+          <ul class="qual-list">
+            <li>
+              <div class="ql-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div><strong>Ph.D – Computer Engineering (Awarded 2025)</strong><span>Sarvepalli Radhakrishnan University, Bhopal</span></div>
+            </li>
+            <li>
+              <div class="ql-icon"><i class="fas fa-university"></i></div>
+              <div><strong>M.E. – Information Technology (2015)</strong><span>Siddhant College of Engineering, Savitribai Phule Pune University</span></div>
+            </li>
+            <li>
+              <div class="ql-icon"><i class="fas fa-laptop-code"></i></div>
+              <div><strong>B.E. – Computer Engineering (2012)</strong><span>Pimpri Chinchwad College of Engineering, Nigdi – SPPU</span></div>
+            </li>
+          </ul>
+
+          <div class="exp-box">
+            <div class="exp-num">13</div>
+            <div class="exp-label"><strong>Years of Teaching Experience</strong>Dedicated to academic excellence and student development at NMIET, Pune</div>
+          </div>
+
+          <hr class="divider"/>
+          <p class="section-label">Key Skills</p>
+          <div class="subject-chips">
+            <span class="subject-chip">Python Programming</span>
+            <span class="subject-chip">Theory of Computation</span>
+            <span class="subject-chip">JFLAP</span>
+            <span class="subject-chip">AI Tools – Mentimeter &amp; Kahoot</span>
+            <span class="subject-chip">Assembly Language Programming</span>
+            <span class="subject-chip">Google Classroom</span>
+          </div>
+
+          <hr class="divider"/>
+          <p class="section-label">Subjects Taught</p>
+          <div class="subject-chips">
+            <span class="subject-chip">Theory of Computation</span>
+            <span class="subject-chip">Programming &amp; Problem Solving</span>
+            <span class="subject-chip">Artificial Intelligence</span>
+            <span class="subject-chip">Computer Graphics</span>
+            <span class="subject-chip">Principal of Programming Languages</span>
+            <span class="subject-chip">Digital Design &amp; Logic Design</span>
+            <span class="subject-chip">Microprocessor</span>
+            <span class="subject-chip">Assembly Language Programming</span>
+            <span class="subject-chip">Computer Organization &amp; Architecture</span>
+            <span class="subject-chip">Mobile Computing</span>
+            <span class="subject-chip">Python Programming</span>
+            <span class="subject-chip">Object Oriented Programming</span>
+            <span class="subject-chip">Computer Graphics Lab (Linux O.S.)</span>
+          </div>
+
+          <hr class="divider"/>
+          <p class="section-label">Academic Excellence – Subject Results at NMIET</p>
+          <table class="data-table" style="margin-top:10px;">
+            <thead><tr><th>#</th><th>Subject</th><th>Academic Year</th><th>Result %</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>SEM-I Theory of Computation</td><td>TE 2025-26</td><td><strong>93.15%</strong><div class="pct-bar"><div class="pct-fill" style="width:93.15%"></div></div></td></tr>
+              <tr><td>2</td><td>SEM-I Theory of Computation</td><td>TE 2024-25</td><td><strong>94.55%</strong><div class="pct-bar"><div class="pct-fill" style="width:94.55%"></div></div></td></tr>
+              <tr><td>3</td><td>SEM-II Artificial Intelligence</td><td>TE 2024-25</td><td><strong>95.60%</strong><div class="pct-bar"><div class="pct-fill" style="width:95.6%"></div></div></td></tr>
+              <tr><td>4</td><td>SEM-II Data Structure &amp; Algorithm</td><td>SE 2023-24</td><td><strong>95.21%</strong><div class="pct-bar"><div class="pct-fill" style="width:95.21%"></div></div></td></tr>
+              <tr><td>5</td><td>SEM-II Data Structure &amp; Algorithm Lab</td><td>SE 2023-24</td><td><strong>97.20%</strong><div class="pct-bar"><div class="pct-fill" style="width:97.2%"></div></div></td></tr>
+              <tr><td>6</td><td>SEM-I Theory of Computation</td><td>TE 2023-24</td><td><strong>98.64%</strong><div class="pct-bar"><div class="pct-fill" style="width:98.64%"></div></div></td></tr>
+              <tr><td>7</td><td>SEM-I OOP &amp; Computer Graphics Lab</td><td>SE 2023-24</td><td><strong>98%</strong><div class="pct-bar"><div class="pct-fill" style="width:98%"></div></div></td></tr>
+              <tr><td>8</td><td>SEM-II Programming &amp; Problem Solving</td><td>FE 2022-23</td><td><strong>78%</strong><div class="pct-bar"><div class="pct-fill" style="width:78%"></div></div></td></tr>
+              <tr><td>9</td><td>SEM-I Programming &amp; Problem Solving</td><td>FE 2022-23</td><td><strong>91%</strong><div class="pct-bar"><div class="pct-fill" style="width:91%"></div></div></td></tr>
+            </tbody>
+          </table>
+
+          <hr class="divider"/>
+          <p class="section-label">Certifications</p>
+          <table class="data-table">
+            <thead><tr><th>#</th><th>Certificate</th><th>Institute</th><th>Grade</th><th>Date</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Learning of Python</td><td>Infosys Springboard</td><td>Completion</td><td>26-Jul-2024</td></tr>
+              <tr><td>2</td><td>Python for Data Science</td><td>NPTEL</td><td><strong style="color:var(--blue);">Elite + Silver 🥈</strong></td><td>Jan-Feb 2024</td></tr>
+              <tr><td>3</td><td>Basics of Python</td><td>Infosys Springboard</td><td>Completion</td><td>18-Apr-2023</td></tr>
+              <tr><td>4</td><td>Programming with Python</td><td>Internshala Trainings</td><td>80%</td><td>March 2023</td></tr>
+              <tr><td>5</td><td>Robotic Process Automation – Blue Prism</td><td>Blend InfoTech</td><td>A+</td><td>August 2018</td></tr>
+              <tr><td>6</td><td>Theory of Computation</td><td>NPTEL</td><td>Mentor</td><td>Jul–Aug 2016</td></tr>
+              <tr><td>7</td><td>Theory of Computation</td><td>NPTEL</td><td>Completion</td><td>2015</td></tr>
+            </tbody>
+          </table>
+
+          <hr class="divider"/>
+          <p class="section-label">FDP / Training — Year-wise Summary</p>
+          <p style="font-size:13.5px;color:var(--text-muted);margin:8px 0 10px;">
+            <strong style="color:var(--navy);">Total FDP Attended: 21 &nbsp;|&nbsp; FDP/Workshop Organized: 3</strong><br/>
+            AICTE ATAL FDP (2): <em>Cyber Security &amp; Ethical Hacking</em> – Army Institute of Technology (Dec 2024); <em>Industry 4.0 – Energy, Sustainability &amp; Climate Change</em> – NMIET (Dec 2024).
+          </p>
+          <table class="data-table">
+            <thead><tr><th style="text-align:left;">#</th><th style="text-align:left;">Academic Year</th><th style="text-align:center;">FDP/QIP Attended</th><th style="text-align:center;">Organized</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>2025-26</td><td style="text-align:center;">4</td><td style="text-align:center;">1</td></tr>
+              <tr><td>2</td><td>2024-25</td><td style="text-align:center;">1</td><td style="text-align:center;">2</td></tr>
+              <tr><td>3</td><td>2023-24</td><td style="text-align:center;">5</td><td style="text-align:center;">1</td></tr>
+              <tr><td>4</td><td>2022-23</td><td style="text-align:center;">3</td><td style="text-align:center;">–</td></tr>
+              <tr><td>5</td><td>2021-22</td><td style="text-align:center;">2</td><td style="text-align:center;">–</td></tr>
+              <tr><td>6</td><td>2020-21</td><td style="text-align:center;">1</td><td style="text-align:center;">–</td></tr>
+              <tr><td>7</td><td>2019-20</td><td style="text-align:center;">4</td><td style="text-align:center;">–</td></tr>
+              <tr><td>8</td><td>2018-19</td><td style="text-align:center;">0</td><td style="text-align:center;">–</td></tr>
+              <tr><td>9</td><td>2017-18</td><td style="text-align:center;">3</td><td style="text-align:center;">–</td></tr>
+              <tr><td>10</td><td>2016-17</td><td style="text-align:center;">2</td><td style="text-align:center;">–</td></tr>
+              <tr style="background:var(--light-blue);font-weight:700;"><td colspan="2" style="color:var(--navy);font-size:13.5px;text-align:left;padding:9px 12px;">Total</td><td style="text-align:center;color:var(--blue);">25</td><td style="text-align:center;color:var(--blue);">4</td></tr>
+            </tbody>
+          </table>
+
+        </div>
+      </section>
+
+      <!-- RESEARCH -->
+      <section class="panel" id="research">
+        <div class="panel-head"><i class="fas fa-flask"></i> Research</div>
+        <div class="panel-body">
+          <p style="font-size:14.5px;color:var(--text-muted);margin-bottom:18px;">My research spans Artificial Intelligence, Data Science, and Computer Science with a strong portfolio of publications in Scopus-indexed and UGC-CARE journals, as well as student-guided research outcomes.</p>
+          <div class="research-grid">
+            <div class="r-card">
+              <h4><i class="fas fa-search"></i> Research Interests</h4>
+              <ul>
+                <li>Machine Learning &amp; Deep Learning</li>
+                <li>Natural Language Processing</li>
+                <li>Computer Vision &amp; Image Processing</li>
+                <li>Blockchain &amp; Secure Systems</li>
+                <li>IoT &amp; Embedded Systems</li>
+                <li>Healthcare &amp; Immunization Tracking</li>
+                <li>Agentic RAG Systems</li>
+              </ul>
+            </div>
+            <div class="r-card">
+              <h4><i class="fas fa-file-alt"></i> Publishing Research Papers</h4>
+              <p>21 research papers in Scopus, UGC-CARE, IEEE, and reputed international journals covering AI, ML, image processing, blockchain, sign language recognition, and medical analytics.</p>
+            </div>
+            <div class="r-card">
+              <h4><i class="fas fa-users"></i> Guiding Student Research</h4>
+              <p>Multiple student papers published under guidance in IJCRT and Scopus-indexed conferences. Students have won the Best Session Award at ICAETBM 2024.</p>
+            </div>
+            <div class="r-card">
+              <h4><i class="fas fa-robot"></i> Key Research Projects</h4>
+              <ul>
+                <li>VACCIDOC – Infant immunization tracker (Scopus)</li>
+                <li>MediInsight – AI-powered medical analytics hub</li>
+                <li>Agentic Multi-Section RAG System (Scopus)</li>
+                <li>Sign Language to Speech using Deep Learning</li>
+                <li>Music Recommendation using CNN &amp; Face Expression</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ROLES -->
+      <section class="panel" id="roles">
+        <div class="panel-head"><i class="fas fa-tasks"></i> Roles &amp; Responsibilities</div>
+        <div class="panel-body">
+          <ul class="role-list">
+            <li><i class="fas fa-globe"></i><span>Led the <strong>International Relations Cell as Associate Dean</strong>, fostering partnerships with foreign universities and industries at NMIET from AY 2025-26.</span></li>
+            <li><i class="fas fa-flag"></i><span>Institute Level <strong>NSS Lady Co-ordinator</strong> for special camp at NMIET; Ladies Staff Co-ordinator for NSS Camp at Mavadi, Jejuri (Feb 2017).</span></li>
+            <li><i class="fas fa-clipboard-check"></i><span>Department <strong>NAAC Co-ordinator</strong> for Criteria 6 and Criteria 4 (AY 2023-24, 2024-25).</span></li>
+            <li><i class="fas fa-clipboard-list"></i><span>Department <strong>NBA Co-ordinator</strong> for Criteria 2; Criteria 6 Co-ordinator (AY 2023-24).</span></li>
+            <li><i class="fas fa-music"></i><span>Co-ordinator for <strong>SPPU Youth Festival</strong> — NMIET secured two awards under guidance.</span></li>
+            <li><i class="fas fa-bus"></i><span>Organized Industrial Visit for <strong>70 students at GMRT</strong> (Giant Metrewave Radio Telescope, Khodad, Junnar) on 13 Sep 2024.</span></li>
+            <li><i class="fas fa-mountain"></i><span>"KILLE SWARDHAN" activity at Shivneri Fort on 13 Sep 2024.</span></li>
+            <li><i class="fas fa-industry"></i><span>Organized Industrial Visit for <strong>50 students at I-Medita</strong> on 18 Feb 2025.</span></li>
+            <li><i class="fas fa-chalkboard"></i><span>Organized workshop on <strong>"Data Structure using C++"</strong> by Milind Anklewhawar for 140 SE Computer students.</span></li>
+            <li><i class="fas fa-brain"></i><span>FDP Organizing Committee Member – <strong>"Deep Dive into AI &amp; ML"</strong> at PCET-NMIET Computer Department.</span></li>
+            <li><i class="fas fa-microphone"></i><span>Event Anchoring at PCET NMIET – Parents Meet, International Conference (May 2024), and other events.</span></li>
+            <li><i class="fas fa-door-open"></i><span>Worked as <strong>Admission Head</strong> for First Year and Direct Second Year admissions.</span></li>
+            <li><i class="fas fa-sitemap"></i><span>Worked as <strong>Head of Department</strong> of First Year Engineering.</span></li>
+            <li><i class="fas fa-users"></i><span>Handled <strong>Class In-charge</strong> responsibilities for assigned classes.</span></li>
+            <li><i class="fas fa-lightbulb"></i><span>Develops innovative teaching methodologies (problem solving, small group discussions) and implements them in the classroom.</span></li>
+            <li><i class="fas fa-book-reader"></i><span>Development of course handout material; guides students on career opportunities.</span></li>
+            <li><i class="fas fa-flask"></i><span>Carries out research and innovative programs; ensures quality, maintenance and cleanliness of the department; participates in departmental and college activities.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- STUDENT CORNER -->
+      <section class="panel" id="students">
+        <div class="panel-head"><i class="fas fa-book-open"></i> Student Corner</div>
+        <div class="panel-body">
+          <p style="font-size:14.5px;color:var(--text-muted);margin-bottom:18px;">A dedicated space for students to access course materials, assignments, resources, and important announcements for TOC, AI, Python, and DSA subjects.</p>
+          <div class="student-grid">
+            <a class="s-card s1" href="notes.html"><div class="icon-wrap"><i class="fas fa-file-powerpoint"></i></div><h4>Lecture Notes</h4><p>TOC, AI, Python, DSA slides &amp; notes</p></a>
+            <a class="s-card s2" href="#"><div class="icon-wrap"><i class="fas fa-pencil-alt"></i></div><h4>Assignments</h4><p>Unit-wise assignments &amp; lab tasks</p></a>
+            <a class="s-card s3" href="#"><div class="icon-wrap"><i class="fas fa-book"></i></div><h4>Study Materials</h4><p>Reference books, PDFs &amp; handouts</p></a>
+            <a class="s-card s4" href="#"><div class="icon-wrap"><i class="fas fa-bullhorn"></i></div><h4>Announcements</h4><p>Notices, exam schedules &amp; updates</p></a>
+            <a class="s-card s5" href="#"><div class="icon-wrap"><i class="fas fa-laptop"></i></div><h4>Learning Resources</h4><p>NPTEL, Infosys Springboard &amp; more</p></a>
+            <a class="s-card s6" href="index.html">
+              <div class="icon-wrap">
+                <i class="fas fa-question-circle"></i>
+  </div>
+  <h4>Ask Questions</h4>
+  <p>Ask doubts directly to faculty</p>
+</a>
+          </div>
+          <div class="announce-box">
+            <h4><i class="fas fa-bell"></i>&nbsp; Recent Announcements</h4>
+            <div class="announce-item"><i class="fas fa-circle" style="font-size:8px;margin-top:6px;"></i><span>Unit Test-II schedule for AY 2024-25 Sem II has been announced. Check departmental notice board.</span></div>
+            <div class="announce-item"><i class="fas fa-circle" style="font-size:8px;margin-top:6px;"></i><span>Python with Data Science lab assignments (Set B) are now available. Download from department portal.</span></div>
+            <div class="announce-item"><i class="fas fa-circle" style="font-size:8px;margin-top:6px;"></i><span>Final year project synopsis submission – Contact Dr. Kajale for guidance and topic finalization.</span></div>
+            <div class="announce-item"><i class="fas fa-circle" style="font-size:8px;margin-top:6px;"></i><span>Workshop on "AI Tools for Students" using Mentimeter &amp; Kahoot – Register with the department office. Limited seats available.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PUBLICATIONS -->
+      <section class="panel" id="publications">
+        <div class="panel-head"><i class="fas fa-file-alt"></i> Publications &amp; Achievements</div>
+        <div class="panel-body">
+
+          <p class="section-label">Publication Summary</p>
+          <div class="pub-grid" style="margin-top:10px;">
+            <div class="pub-card"><div class="pub-icon"><i class="fas fa-file-alt"></i></div><div class="pub-num">21</div><div class="pub-label">Research Papers</div></div>
+            <div class="pub-card"><div class="pub-icon"><i class="fas fa-copyright"></i></div><div class="pub-num">14</div><div class="pub-label">Copyrights Granted</div></div>
+            <div class="pub-card"><div class="pub-icon"><i class="fas fa-lightbulb"></i></div><div class="pub-num">01</div><div class="pub-label">Patent Granted</div></div>
+            <div class="pub-card"><div class="pub-icon"><i class="fas fa-book"></i></div><div class="pub-num">04</div><div class="pub-label">Books Published</div></div>
+            <div class="pub-card"><div class="pub-icon"><i class="fas fa-chalkboard-teacher"></i></div><div class="pub-num">21</div><div class="pub-label">FDPs Attended</div></div>
+            <div class="pub-card"><div class="pub-icon"><i class="fas fa-tools"></i></div><div class="pub-num">03</div><div class="pub-label">Workshops Organized</div></div>
+          </div>
+
+          <hr class="divider"/>
+          <p class="section-label">Research Papers (21 Total)</p>
+          <table class="data-table">
+            <thead><tr><th>#</th><th>Title</th><th>Journal / Conference</th><th>Year</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Design and Implementation of an Agentic Multi Section RAG System for Institutional Knowledge Retrieval</td><td><span class="pub-tag tag-scopus">Scopus</span> ICITSC FusionX 2k25, Ravet</td><td>Dec 2025</td></tr>
+              <tr><td>2</td><td>MediInsight: A Centralized and Unified AI-Powered Medical Analytics Hub</td><td><span class="pub-tag tag-scopus">Scopus</span> ICITSC FusionX 2k25, Ravet</td><td>Dec 2025</td></tr>
+              <tr><td>3</td><td>VACCIDOC: An Infant Immunization Tracker for Private Hospitals by Integrating OTP-Based Verification</td><td><span class="pub-tag tag-scopus">Scopus</span> Communications on Applied Nonlinear Analysis</td><td>Dec 2024</td></tr>
+              <tr><td>4</td><td>Tracking of Indian Children's Immunization System for Private Hospitals Using Real-Time Data</td><td><span class="pub-tag tag-scopus">Scopus</span> Hinweis 3rd Intl. Conference on ASIT</td><td>Aug 2024</td></tr>
+              <tr><td>5</td><td>Tracking Indian Children's Immunization System for Private Sector Using Real-Time Data</td><td><span class="pub-tag tag-ugc">UGC Care</span> ICAETBM Conference, Pune</td><td>May 2024</td></tr>
+              <tr><td>6</td><td>Ramification of Phone Radiation Detection and Absorbing Radiation During Slumber Time</td><td>ICAETBM Conference, Pune <em>(Best Session Award)</em></td><td>May 2024</td></tr>
+              <tr><td>7</td><td>Block-chain Based Voting System</td><td>IJCRT – International Journal of Creative Research Thoughts</td><td>May 2024</td></tr>
+              <tr><td>8</td><td>Indian Sign Language Recognition System</td><td>IJCRT – International Journal of Creative Research Thoughts</td><td>May 2024</td></tr>
+              <tr><td>9</td><td>Exploring The Relationship Between Facial Expressions And Music Preferences</td><td>IJCRT – International Journal of Creative Research Thoughts</td><td>May 2024</td></tr>
+              <tr><td>10</td><td>Indian Sign Language Recognition System</td><td>IJCRT – International Journal of Creative Research Thoughts</td><td>May 2024</td></tr>
+              <tr><td>11</td><td>Music Recommendation System Using Advanced CNN And Face Expression Recognition</td><td>IJCRT – International Journal of Creative Research Thoughts</td><td>May 2024</td></tr>
+              <tr><td>12</td><td>Sign Language To Speech Conversion Using Deep Learning</td><td>IJCRT – International Journal of Creative Research Thoughts</td><td>May 2024</td></tr>
+              <tr><td>13</td><td>Vote Chain: Block-chain Voting System</td><td>IJCRT – International Journal of Creative Research Thoughts</td><td>May 2024</td></tr>
+              <tr><td>14</td><td>Review on Facial Expression Based Music Recommendation System</td><td>International Journal of Advanced Research in Science, Communication and Technology</td><td>May 2024</td></tr>
+              <tr><td>15</td><td>Line Follower Robot</td><td>International Journal of Novel Research and Development</td><td>Jun 2023</td></tr>
+              <tr><td>16</td><td>Online Software Selling in E-Commerce Applications Applying Login Security</td><td>International Journal of Advance Engineering and Research Development</td><td>Mar 2018</td></tr>
+              <tr><td>17</td><td>Online Software Selling in E-Commerce Application Providing Login Security</td><td>International Journal of Advance Engineering and Research Development, Vol.5, Issue 03</td><td>Mar 2018</td></tr>
+              <tr><td>18</td><td>Detecting, Capturing, and Resolving of DDoS Attack with Hadoop</td><td>International Journal for Scientific Research and Development, Vol.6, Issue 2</td><td>Apr 2018</td></tr>
+              <tr><td>19</td><td>Supervised Machine Learning in Intelligent Character Recognition of Handwritten and Printed Name Plate</td><td><span class="pub-tag tag-ieee">IEEE</span> International Conference on Advance Computing, Communication and Control</td><td>Dec 2017</td></tr>
+              <tr><td>20</td><td>Detection &amp; Reorganization of Plant Leaf Diseases Using Image Processing And Android O.S.</td><td>International Journal of Engineering Research and General Science, Vol.3, Issue 2, Part 2</td><td>Mar 2015</td></tr>
+              <tr><td>21</td><td>Detection of Plant Leaf Diseases Using Image Processing and Android O.S.</td><td>Amrutvahini College of Engineering, Sangamner – iPGCON 2015</td><td>Feb 2015</td></tr>
+            </tbody>
+          </table>
+
+          <hr class="divider"/>
+          <p class="section-label">Patent</p>
+          <div style="background:var(--light-blue);border-left:4px solid var(--blue);padding:14px 18px;border-radius:var(--radius);margin-top:10px;display:flex;gap:16px;align-items:center;">
+            <i class="fas fa-lightbulb" style="font-size:28px;color:var(--gold);"></i>
+            <div>
+              <p style="font-size:15px;color:var(--navy);font-weight:700;">Signal Traffic Management System</p>
+              <p style="font-size:13px;color:var(--text-muted);margin-top:3px;">Status: <strong style="color:#2e7d32;"><i class="fas fa-check-circle"></i> Granted</strong></p>
+            </div>
+          </div>
+
+          <hr class="divider"/>
+          <p class="section-label">Books Published (4) — Publisher: Tech-Neo, Pune</p>
+          <table class="data-table">
+            <thead><tr><th>#</th><th>Book Title</th><th>Publisher</th><th>University</th><th>Department &amp; Pattern</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Programming and Problem Solving</td><td>Tech-Neo, Pune</td><td>Mumbai</td><td>Diploma – Computer Engineering</td></tr>
+              <tr><td>2</td><td>Python Programming</td><td>Tech-Neo, Pune</td><td>Mumbai</td><td>FE Engineering</td></tr>
+              <tr><td>3</td><td>Microprocessor</td><td>Tech-Neo, Pune</td><td>SPPU</td><td>Computer Engineering – PAT 2019</td></tr>
+              <tr><td>4</td><td>Processor Architecture</td><td>Tech-Neo, Pune</td><td>SPPU</td><td>Information Technology – PAT 2019</td></tr>
+            </tbody>
+          </table>
+
+          <hr class="divider"/>
+          <p class="section-label">Copyrights (14)</p>
+          <table class="data-table">
+            <thead><tr><th>#</th><th>Problem Statement / Work</th><th>Publication Date</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Plastic E-waste</td><td>2024</td></tr>
+              <tr><td>2</td><td>Making Engineering Graphics More Precise and Increasing Accuracy for Arrowhead</td><td>29/06/2023</td></tr>
+              <tr><td>3</td><td>Product Energy from Piezoelectric</td><td>29/06/2023</td></tr>
+              <tr><td>4</td><td>Design and Develop a Solar Cleaning System to Improve Efficiency and Life Span of Solar Panels</td><td>29/06/2023</td></tr>
+              <tr><td>5</td><td>A Device That Detects and Removes Weeds</td><td>29/06/2023</td></tr>
+              <tr><td>6</td><td>Stock Market Analysis by Using Python Code</td><td>29/06/2023</td></tr>
+              <tr><td>7</td><td>Anti-sleep Glasses for Drivers</td><td>29/06/2023</td></tr>
+              <tr><td>8</td><td>Automatic Switch for Water Pump</td><td>29/06/2023</td></tr>
+              <tr><td>9</td><td>Black Board Cleaner</td><td>29/06/2023</td></tr>
+              <tr><td>10</td><td>Mini Vacuum Cleaner</td><td>29/06/2023</td></tr>
+              <tr><td>11</td><td>Street Light Controller</td><td>29/06/2023</td></tr>
+              <tr><td>12</td><td>Line Follower Robot</td><td>29/06/2023</td></tr>
+              <tr><td>13</td><td>The Bot – Information Exchanger</td><td>29/06/2023</td></tr>
+              <tr><td>14</td><td>Electricity Generation through Magnetic Energy</td><td>29/06/2023</td></tr>
+            </tbody>
+          </table>
+
+        </div>
+      </section>
+
+      <!-- ACHIEVEMENTS -->
+      <section class="panel" id="achievements">
+        <div class="panel-head"><i class="fas fa-trophy"></i> Achievements &amp; Extra-Curricular</div>
+        <div class="panel-body">
+          <p class="section-label">Awards &amp; Recognitions</p>
+          <ul class="achieve-list">
+            <li><i class="fas fa-star" style="color:var(--gold);"></i><span>Received the <strong>Late Krushrao Bhegade Karyagaurav Best Teacher Award</strong> from NMIET on 1st March 2026.</span></li>
+            <li><i class="fas fa-globe" style="color:var(--blue);"></i><span>Led the <strong>International Relations Cell as Associate Dean</strong>, fostering partnerships with foreign universities and industries at NMIET from AY 2025-26.</span></li>
+            <li><i class="fas fa-music" style="color:var(--blue);"></i><span>Co-ordinator for the <strong>SPPU Youth Festival</strong> — NMIET secured two awards under guidance.</span></li>
+            <li><i class="fas fa-award" style="color:var(--gold);"></i><span>Won the <strong>Best Session Award</strong> at ICAETBM Conference-2024 (NMIET) for the paper on "Ramification of Phone Radiation Detection and Absorbing Radiation During Slumber Time."</span></li>
+            <li><i class="fas fa-medal" style="color:var(--gold);"></i><span><strong>NPTEL Certification</strong> in Python for Data Science with <strong>Elite + Silver Medal</strong> (Jan-Feb 2024).</span></li>
+            <li><i class="fas fa-chalkboard" style="color:var(--blue);"></i><span><strong>NMIET Best Academic Presenter</strong> Award – NMIET 2024.</span></li>
+            <li><i class="fas fa-handshake" style="color:var(--blue);"></i><span>Signing of the <strong>I-Medita MOU</strong> during an industry visit — strengthening industry-academia collaboration.</span></li>
+            <li><i class="fas fa-chart-line" style="color:var(--blue);"></i><span><strong>NMIET Academic Excellence Award</strong> for subject result in FE Programming &amp; Problem Solving (2023).</span></li>
+            <li><i class="fas fa-cricket" style="color:var(--blue);"></i><span><strong>Runner-up</strong> for Cricket Match held at NMIET Swartarang 2025.</span></li>
+          </ul>
+
+          <hr class="divider"/>
+          <p class="section-label">Extra-Curricular Activities</p>
+          <ul class="achieve-list">
+            <li><i class="fas fa-check-circle" style="color:var(--blue);"></i><span>COVID-19 Awareness Quiz – National Service Scheme Team, Trinity College of Engineering &amp; Research, Pune (23/04/2020).</span></li>
+            <li><i class="fas fa-check-circle" style="color:var(--blue);"></i><span>Certificate of Appreciation for "Python Quiz" — NBN Sinhgad School of Engineering (5/4/2020).</span></li>
+            <li><i class="fas fa-check-circle" style="color:var(--blue);"></i><span>Certificate of Appreciation for NPTEL Online Certification – Theory of Computation.</span></li>
+            <li><i class="fas fa-check-circle" style="color:var(--blue);"></i><span>Managing Departmental Level and College-Level events at PES MCOE, Pune.</span></li>
+            <li><i class="fas fa-check-circle" style="color:var(--blue);"></i><span>Ladies Staff Co-ordinator for NSS Camp at Mavadi, Jejuri (Feb 2017).</span></li>
+            <li><i class="fas fa-check-circle" style="color:var(--blue);"></i><span>Attended National Level Seminar on "Big Data &amp; Hadoop" at PES MCOE, Pune (Jan 2015).</span></li>
+            <li><i class="fas fa-check-circle" style="color:var(--blue);"></i><span>Attended Seminar on "Document Clustering" at PCCOE, Akurdi (2011).</span></li>
+            <li><i class="fas fa-check-circle" style="color:var(--blue);"></i><span>Participation in "SEED IDOL" Competition (2012) and "IBM – The Great Mind Challenge 11" Project Competition.</span></li>
+            <li><i class="fas fa-check-circle" style="color:var(--blue);"></i><span>I &amp; II Prize for "Rangoli Competition" in Swaratarang 2009 &amp; 2010 respectively.</span></li>
+            <li><i class="fas fa-check-circle" style="color:var(--blue);"></i><span>Volunteered for Techligent 2008 &amp; 2009.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="panel" id="contact">
+        <div class="panel-head"><i class="fas fa-envelope"></i> Contact</div>
+        <div class="panel-body">
+          <div class="contact-grid">
+            <div>
+              <p class="section-label">Contact Information</p>
+              <ul class="contact-info-list" style="margin-top:10px;">
+                <li>
+                  <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+                  <div><div class="ci-label">Email (Personal)</div><div class="ci-val"><a href="mailto:renukajale@gmail.com" style="color:var(--blue);text-decoration:none;">renukajale@gmail.com</a></div></div>
+                </li>
+                <li>
+                  <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+                  <div><div class="ci-label">Email (Institutional)</div><div class="ci-val"><a href="mailto:renuka.kajale@nmiet.edu.in" style="color:var(--blue);text-decoration:none;">renuka.kajale@nmiet.edu.in</a></div></div>
+                </li>
+                <li>
+                  <div class="ci-icon"><i class="fas fa-phone"></i></div>
+                  <div><div class="ci-label">Mobile</div><div class="ci-val">8669704710 &nbsp;/&nbsp; 7745073990</div></div>
+                </li>
+                <li>
+                  <div class="ci-icon"><i class="fas fa-building"></i></div>
+                  <div><div class="ci-label">Department</div><div class="ci-val">Computer Science &amp; Engineering, NMIET, Pune</div></div>
+                </li>
+                <li>
+                  <div class="ci-icon"><i class="fas fa-home"></i></div>
+                  <div><div class="ci-label">Correspondence Address</div><div class="ci-val">Rio Vista Building, Flat No. A303, Varale, Talegaon Dabhade – 410507</div></div>
+                </li>
+                <li>
+                  <div class="ci-icon"><i class="fas fa-map-pin"></i></div>
+                  <div><div class="ci-label">Permanent Address</div><div class="ci-val">At/Post – Shiroli B.K., Dist-Pune – 410511</div></div>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="section-label">Office Hours</p>
+              <div class="oh-box" style="margin-top:10px;">
+                <div class="oh-head"><i class="fas fa-clock"></i>&nbsp; Weekly Schedule</div>
+                <table class="oh-table">
+                  <tr><td>Monday</td><td>10:00 AM – 12:00 PM</td></tr>
+                  <tr><td>Tuesday</td><td>2:00 PM – 4:00 PM</td></tr>
+                  <tr><td>Wednesday</td><td>10:00 AM – 12:00 PM</td></tr>
+                  <tr><td>Thursday</td><td>2:00 PM – 4:00 PM</td></tr>
+                  <tr><td>Friday</td><td>By Appointment</td></tr>
+                </table>
+              </div>
+              <p style="font-size:12.5px;color:var(--text-muted);margin-top:10px;">
+                <i class="fas fa-info-circle" style="color:var(--blue);"></i>&nbsp; For queries, email with subject: <em>"Student Query – [Course Name]"</em>
+              </p>
+              <div style="background:var(--light-blue);border-radius:var(--radius);padding:14px 16px;margin-top:14px;">
+                <p style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;"><i class="fas fa-id-card"></i>&nbsp; Professional Memberships</p>
+                <p style="font-size:13px;color:var(--text-muted);">ISTE Life Member: <strong>LM118379</strong></p>
+                <p style="font-size:13px;color:var(--text-muted);margin-top:4px;">INENG Life Member: <strong>371218</strong></p>
+              </div>
+              <div style="background:#f0f7f0;border:1px solid #b8ddb8;border-radius:var(--radius);padding:14px 16px;margin-top:12px;">
+                <p style="font-size:13px;font-weight:700;color:#2e7d32;margin-bottom:6px;"><i class="fas fa-user"></i>&nbsp; Personal Profile</p>
+                <p style="font-size:13px;color:var(--text-muted);">Date of Birth: <strong>11 April 1990</strong></p>
+                <p style="font-size:13px;color:var(--text-muted);margin-top:3px;">Hobbies: <strong>Rangoli Making, Reading, Music</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<footer>
+  <p><strong>Dr. Renuka Rajendra Kajale</strong> &nbsp;|&nbsp; Assistant Professor, Department of Computer Science &amp; Engineering<br/>
+  Nutan Maharashtra Institute of Engineering &amp; Technology (NMIET), Pune, Maharashtra</p>
+  <p style="margin-top:8px;font-size:12px;opacity:.7;">&copy; 2026 Dr. Renuka Rajendra Kajale. All rights reserved. &nbsp;|&nbsp; Academic Faculty Portal</p>
+</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}
+    });
+  });
+  const sections = document.querySelectorAll('section.panel');
+  const navLinks = document.querySelectorAll('nav.main-nav a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => { if(window.scrollY >= sec.offsetTop - 100) current = sec.id; });
+    navLinks.forEach(link => { link.classList.toggle('active', link.getAttribute('href') === '#'+current); });
+  });
+</script>
+</body>
+</html>
