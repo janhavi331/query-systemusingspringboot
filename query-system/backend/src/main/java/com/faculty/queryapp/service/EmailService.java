@@ -71,4 +71,42 @@ public class EmailService {
                 NMIET, Pune
                 """.formatted(teacherName, query.getQuestion(), query.getAnswer(), teacherName);
     }
+
+    public void sendNewQueryNotification(StudentQuery query) {
+        if (!mailEnabled) return;
+
+        try {
+            SimpleMailMessage message = new SimpleMailMessage();
+            message.setFrom(fromEmail);
+            message.setTo("renukakajale341@gmail.com"); // ya property se lo
+            message.setSubject("New Student Query Received");
+
+            message.setText("""
+                Hello %s,
+
+                A new query has been submitted by a student.
+
+                ─────────────────────────────
+                Student Email: %s
+
+                Question:
+                %s
+                ─────────────────────────────
+
+                Please log in to the system and respond.
+
+                Regards,
+                Query System
+                """.formatted(
+                    teacherName,
+                    query.getStudentEmail(),
+                    query.getQuestion()
+            ));
+
+            mailSender.send(message);
+
+        } catch (Exception e) {
+            System.out.println("Mail failed: " + e.getMessage());
+        }
+    }
 }

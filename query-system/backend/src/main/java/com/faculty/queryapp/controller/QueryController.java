@@ -1,6 +1,7 @@
 package com.faculty.queryapp.controller;
 
 import com.faculty.queryapp.model.*;
+import com.faculty.queryapp.service.EmailService;
 import com.faculty.queryapp.service.QueryService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -9,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/queries")
@@ -16,9 +19,12 @@ import java.util.Map;
 public class QueryController {
 
     private final QueryService queryService;
+    List<StudentQuery> list = new ArrayList<>();
+    private final EmailService emailService;
 
-    public QueryController(QueryService queryService) {
+    public QueryController(QueryService queryService, EmailService emailService) {
         this.queryService = queryService;
+        this.emailService = emailService;
     }
 
     /**
@@ -30,6 +36,10 @@ public class QueryController {
             @Valid @RequestBody QueryRequest request) {
         try {
             StudentQuery saved = queryService.addQuery(request);
+
+            // 🔥 ADD THIS LINE
+            emailService.sendNewQueryNotification(saved);
+
             return ResponseEntity.status(HttpStatus.CREATED)
                     .body(ApiResponse.ok("Query submitted successfully!", saved));
         } catch (IllegalArgumentException e) {
@@ -134,4 +144,5 @@ public class QueryController {
                 "version", "1.0.0"
         ));
     }
+
 }
