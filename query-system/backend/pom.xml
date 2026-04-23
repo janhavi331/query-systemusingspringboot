@@ -1,130 +1,105 @@
-# ─── Server ───────────────────────────────────────
-server.port=8080
-#
-## ─── H2 In-Memory Database ────────────────────────
-#spring.datasource.url=jdbc:h2:mem:querydb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-#spring.datasource.driver-class-name=org.h2.Driver
-#spring.datasource.username=sa
-#spring.datasource.password=
-#spring.h2.console.enabled=true
-#spring.h2.console.path=/h2-console
-#
-## ─── JPA / Hibernate ──────────────────────────────
-#spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
-#spring.jpa.hibernate.ddl-auto=create-drop
-#spring.jpa.show-sql=false
-# MySQL config
-spring.datasource.url=# ─── Server ───────────────────────────────────────
-server.port=8080
-#
-## ─── H2 In-Memory Database ────────────────────────
-#spring.datasource.url=jdbc:h2:mem:querydb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-#spring.datasource.driver-class-name=org.h2.Driver
-#spring.datasource.username=sa
-#spring.datasource.password=
-#spring.h2.console.enabled=true
-#spring.h2.console.path=/h2-console
-#
-## ─── JPA / Hibernate ──────────────────────────────
-#spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
-#spring.jpa.hibernate.ddl-auto=create-drop
-#spring.jpa.show-sql=false
-# MySQL config
-spring.datasource.url=jdbc:postgresql://ep-damp-forest-aoussjb3-pooler.c-2.ap-southeast-1.aws.neon.tech:5432/neondb?sslmode=require
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-spring.datasource.username=neondb_owner
-spring.datasource.password=npg_js6WaBOd1AEJ
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.2.0</version>
+    <relativePath/>
+  </parent>
 
-spring.datasource.driver-class-name=org.postgresql.Driver
+  <groupId>com.faculty</groupId>
+  <artifactId>query-app</artifactId>
+  <version>1.0.0</version>
+  <name>Faculty Student Query System</name>
+  <description>Student Query Management System for Faculty Website</description>
 
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+  <properties>
+    <java.version>17</java.version>
+  </properties>
 
-server.port=${PORT:8080}
+  <dependencies>
+    <!-- Spring Web -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
 
+    <!-- Spring Data JPA -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
 
+    <!-- H2 In-Memory Database (swap for MySQL/PostgreSQL in production) -->
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <scope>runtime</scope>
+    </dependency>
 
-# JPA settings
+    <!-- Validation -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
 
+    <!-- Spring Mail (for optional email notifications) -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-mail</artifactId>
+    </dependency>
 
-# ─── CORS ─────────────────────────────────────────
-# Allowed origins for frontend (update for production)
-app.cors.allowed-origins=http://localhost:3000,http://127.0.0.1:5500,http://localhost:5500,null
+    <!-- Lombok -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
+    </dependency>
 
-# ─── Allowed Email Domain ─────────────────────────
-# Change this to your college domain e.g. @nmiet.edu.in
-app.allowed-email-domain=@nmiet.edu.in
+    <!-- Spring Boot Test -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.mysql</groupId>
+      <artifactId>mysql-connector-j</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
 
-# ─── Teacher PIN (simple auth for teacher panel) ──
-app.teacher-pin=teacher123
+  <build>
+    <plugins>
+      <!-- IMPORTANT FIX -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <source>17</source>
+          <target>17</target>
+        </configuration>
+      </plugin>
 
-# ─── Mail Configuration (Optional – for email notifications) ──
-# Uncomment and configure to enable email notifications
-# spring.mail.host=smtp.gmail.com
-# spring.mail.port=587
-# spring.mail.username=your-email@gmail.com
-# spring.mail.password=your-app-password
-# spring.mail.properties.mail.smtp.auth=true
-# spring.mail.properties.mail.smtp.starttls.enable=true
-# app.mail.enabled=true
-# app.mail.teacher-name=Dr. Renuka Kajale
-app.mail.enabled=true
+      <!-- Spring Boot Plugin -->
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <excludes>
+            <exclude>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+            </exclude>
+          </excludes>
+        </configuration>
+      </plugin>
 
-spring.mail.host=smtp.gmail.com
-spring.mail.port=587
-spring.mail.username=renukakajale341@gmail.com
-spring.mail.password=gwin xewc johg eqdp
-
-spring.mail.properties.mail.smtp.auth=true
-spring.mail.properties.mail.smtp.starttls.enable=true
-#for teacher get mail
-app.mail.teacher-email=renukakajale341@gmail.com
-spring.datasource.username=root
-spring.datasource.password=XDEqZfyctPKtpkFICeVZLQJEEBuYGoVA
-
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-
-server.port=${PORT:8080}
-
-
-
-# JPA settings
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
-
-# ─── CORS ─────────────────────────────────────────
-# Allowed origins for frontend (update for production)
-app.cors.allowed-origins=http://localhost:3000,http://127.0.0.1:5500,http://localhost:5500,null
-
-# ─── Allowed Email Domain ─────────────────────────
-# Change this to your college domain e.g. @nmiet.edu.in
-app.allowed-email-domain=@nmiet.edu.in
-
-# ─── Teacher PIN (simple auth for teacher panel) ──
-app.teacher-pin=teacher123
-
-# ─── Mail Configuration (Optional – for email notifications) ──
-# Uncomment and configure to enable email notifications
-# spring.mail.host=smtp.gmail.com
-# spring.mail.port=587
-# spring.mail.username=your-email@gmail.com
-# spring.mail.password=your-app-password
-# spring.mail.properties.mail.smtp.auth=true
-# spring.mail.properties.mail.smtp.starttls.enable=true
-# app.mail.enabled=true
-# app.mail.teacher-name=Dr. Renuka Kajale
-app.mail.enabled=true
-
-spring.mail.host=smtp.gmail.com
-spring.mail.port=587
-spring.mail.username=renukakajale341@gmail.com
-spring.mail.password=gwin xewc johg eqdp
-
-spring.mail.properties.mail.smtp.auth=true
-spring.mail.properties.mail.smtp.starttls.enable=true
-#for teacher get mail
-app.mail.teacher-email=renukakajale341@gmail.com
+    </plugins>
+  </build>
+</project>
